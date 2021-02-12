@@ -1,6 +1,6 @@
 {
-  "name": "Gespro-utils",
-  "version": "1.0.0",
+  "name": "gespro-utils",
+  "version": "1.0.3",
   "description": "Funciones generales para desarrollos de recursos Gespro",
   "main": "/src/index.js",
   "scripts": {

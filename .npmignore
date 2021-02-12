@@ -1,4 +1,5 @@
-/src
-/application-test
+src/
+application-test/
 .babelrc
 webpack.config.js
+.gitattributes
