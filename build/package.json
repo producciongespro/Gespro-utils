@@ -1,0 +1,20 @@
+{
+  "name": "gespro-utils",
+  "version": "1.0.4",
+  "description": "Funciones generales para desarrollos de recursos Gespro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/producciongespro/Gespro-utils.git"
+  },
+  "keywords": [],
+  "author": "Luis Chacón Campos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/producciongespro/Gespro-utils/issues"
+  },
+  "homepage": "https://github.com/producciongespro/Gespro-utils#readme"
+}
