@@ -1,11 +1,10 @@
 
-exports.filtrarKey =  function (array, llave, valor, metodo) {    
+exports.filtrarKey =  function (array, llave, valor) {    
     valor = valor.toString();
     
     //console.log("*********Filtro por criterio llave", llave);    
     //console.log("******Valor de la llave", valor );        
-    //console.log("aaray recibido para filtrar", array); 
-    //console.log("filtrarkey desde el Método ",metodo);        
+    //console.log("aaray recibido para filtrar", array);            
     
     if (array.length > 0) {
         const limite = array.length;
