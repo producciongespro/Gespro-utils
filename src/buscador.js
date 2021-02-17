@@ -10,7 +10,7 @@ exports.buscar =  function (palabra, array) {
       //Si las estiquetas contienen mayúsucla
       //let str = array[index].tags.toLowerCase();
       let str = array[index].tags;
-      str= eliminarTildes(str);
+      //str= eliminarTildes(str);
       const patt = new RegExp(palabra);
       const res = patt.test(str); 
       if (res) {
@@ -21,6 +21,7 @@ exports.buscar =  function (palabra, array) {
   }
   
   const  eliminarTildes=(cadena)=> {
+	  console.log("cadena",cadena);
     let tmpCadena = cadena.replace(/á/g, "a");
     tmpCadena = tmpCadena.replace(/é/g, "e");    
     tmpCadena = tmpCadena.replace(/í/g, "i");
