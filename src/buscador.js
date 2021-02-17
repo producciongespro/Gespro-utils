@@ -1,10 +1,10 @@
 
 exports.buscar =  function (palabra, array) {
-    console.log("array desde buscador", array);
+    //console.log("array desde buscador", array);
     let tmpArray=[];
     palabra= palabra.toLowerCase();
     palabra=eliminarTildes(palabra);
-    console.log(palabra);
+    //console.log("palabra ingresada:", palabra);
     const limite= array.length;
     for (let index = 0; index < limite; index++) {
       //Si las estiquetas contienen mayúsucla
