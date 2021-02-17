@@ -109,3 +109,25 @@ console.log("Mes actual:", fecha("mes") );
 console.log("dia de hoy:", fecha("dia") );
 console.log( "Objeto con la fecha actual:", fecha("objHoy") );
 ~~~
+
+
+  ### plataforma.js 👇
+ ---
+ Este *script* contiene solamente una función: ***fecha***:
+
+#### plataforma 🔥
+`` plataforma ()``
+> Recibe una palabra *(string)* que determina el formato de fecha o el valor de fecha del sistema que debe devolver:
+
++ Parámetro: 🖐️
+No recibe ningún parámetro.
+
++ Valor que devuelve: Tipo de plataforma en la que se ejecuta la función. Por lo que se relaciona con el dipositivo. A saber: "escritorio" o "movil"
+
+
+**Ejemplo:** 📜
+~~~
+const {dispositivo} = require("./dispositivo");
+
+console.log( "Estoy en un dispositivo", dispositivo() );
+~~~
