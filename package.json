@@ -1,8 +1,8 @@
 {
   "name": "gespro-utils",
-  "version": "1.0.3",
+  "version": "1.1.5",
   "description": "Funciones generales para desarrollos de recursos Gespro",
-  "main": "/src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
