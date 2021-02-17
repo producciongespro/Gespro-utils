@@ -1,15 +1,8 @@
-const { buscar } = require("./buscador");
+const {fecha} = require("./fecha");
 
-let recursos = [
-  {
-    nombre: "Aprendo a leer con la niña Pochita",
-    tags: "lectura, primero, español, básico",
-  },
-  {
-    nombre: "Sumando con los patos saltarines",
-    tags: "sumas, primero, matematica, básico",
-  },
-];
+console.log( "Fecha en formato YY-M-D:", fecha("today") );
+console.log( "Fecha de hoy en formato DD-M-YY:", fecha("hoy") );
+console.log("Mes actual:", fecha("mes") );
+console.log("dia de hoy:", fecha("dia") );
+console.log( "Objeto con la fecha actual:", fecha("objHoy") );
 
-let filtrados = buscar("sumas", recursos);
-console.log("filtrados", filtrados);

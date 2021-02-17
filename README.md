@@ -8,7 +8,7 @@
  >A continuación se detalla el contenido de cada uno de los ***scripts***, las funciones que contienen y para qué sirve cada una, los valroes que recibe como parametros y el dato que devuelve con ejemplos.
 
 
- ### akiri 👇
+ ### akiri.js 👇
  ---
  Este *script* contiene dos funciones: ***getData*** y ***sendData***:
 
@@ -52,7 +52,7 @@ let resp = await sendData (data, url);
 console.log(resp);
 ~~~
 
- ### buscador 👇
+ ### buscador.js 👇
  ---
  Este *script* contiene solamente una función: ***buscar***:
 
@@ -83,3 +83,29 @@ let recursos = [
 let filtrados = buscar("sumas", recursos);
 console.log("filtrados", filtrados);
   ~~~
+
+
+  ### fecha.js 👇
+ ---
+ Este *script* contiene solamente una función: ***fecha***:
+
+#### fecha 🔥
+`` fecha (params)``
+> Recibe una palabra *(string)* que determina el formato de fecha o el valor de fecha del sistema que debe devolver:
+
++ Parámetro: 🖐️
+1. **params**: Especifica el formato o tipo de dato de fecha que debe devolver: ***"today", "hoy", "mes", "dia", "objHoy"***
+
++ Valor que devuelve: fecha del sistema en diferentes formatos. **Nota:** el mes 1 corresponde a enero.
+
+
+**Ejemplo:** 📜
+~~~
+const {fecha} = require("./fecha");
+
+console.log( "Fecha en formato YY-M-D:", fecha("today") );
+console.log( "Fecha de hoy en formato DD-M-YY:", fecha("hoy") );
+console.log("Mes actual:", fecha("mes") );
+console.log("dia de hoy:", fecha("dia") );
+console.log( "Objeto con la fecha actual:", fecha("objHoy") );
+~~~
