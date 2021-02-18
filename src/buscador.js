@@ -1,13 +1,12 @@
 
-exports.buscar =  function (palabra, array) {
-    //console.log("array desde buscador", array);
+exports.buscar =  function (palabra, array) {    
     let tmpArray=[];
     palabra= palabra.toLowerCase();
     palabra=eliminarTildes(palabra);
     //console.log("palabra ingresada:", palabra);
     const limite= array.length;
     for (let index = 0; index < limite; index++) {
-      //Si las estiquetas contienen mayúsucla
+      //Si las estiquetas contienen mayúscula:
       //let str = array[index].tags.toLowerCase();
       let str = array[index].tags;
       //str= eliminarTildes(str);
@@ -21,7 +20,7 @@ exports.buscar =  function (palabra, array) {
   }
   
   const  eliminarTildes=(cadena)=> {
-	  console.log("cadena",cadena);
+	  console.log("cadena:",cadena);
     let tmpCadena = cadena.replace(/á/g, "a");
     tmpCadena = tmpCadena.replace(/é/g, "e");    
     tmpCadena = tmpCadena.replace(/í/g, "i");
