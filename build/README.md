@@ -72,11 +72,11 @@ console.log(resp);
 let recursos = [
   {
     nombre: "Aprendo a leer con la niña Pochita",
-    tags: "lectura, primero, español, básico",
+    tags: "lectura, primero, español, básico"
   },
   {
     nombre: "Sumando con los patos saltarines",
-    tags: "sumas, primero, matematica, básico",
+    tags: "sumas, primero, matematica, básico"
   },
 ];
 

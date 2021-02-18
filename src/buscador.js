@@ -20,7 +20,7 @@ exports.buscar =  function (palabra, array) {
   }
   
   const  eliminarTildes=(cadena)=> {
-	  console.log("cadena:",cadena);
+	  //console.log("cadena:",cadena);
     let tmpCadena = cadena.replace(/á/g, "a");
     tmpCadena = tmpCadena.replace(/é/g, "e");    
     tmpCadena = tmpCadena.replace(/í/g, "i");
