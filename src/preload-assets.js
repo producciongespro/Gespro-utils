@@ -1,5 +1,4 @@
-//module.exports =
-function preloadAudios(array, audios ) {  
+module.exports = function preloadAudios(array, audios ) {  
   let itemAudio;
 
   array.forEach((element) => {
@@ -17,8 +16,7 @@ function preloadAudios(array, audios ) {
   });  
 };
 
-//module.exports = 
-function getUrl  (array, id) {
+module.exports = function getUrl  (array, id) {
     console.log("id", id);
     let tmpUrl=null;
 
@@ -31,8 +29,7 @@ function getUrl  (array, id) {
     return tmpUrl;
   };
 
-  //module.exports = 
-  function renderAudio(url) {
+module.exports = function renderAudio(url) {
   const visor = document.getElementById("visor");
   if (url) {
     visor.innerHTML = `
@@ -47,4 +44,41 @@ function getUrl  (array, id) {
   }
 };
 
+module.exports = function  preloadImages (array, images, urlNoImage) {
+  /*
+  images: empty array
+  url: path image url 
+  id: record id
+  urlNoImage: path no image.jpg
+   */
+  let image;
+  array.forEach((element) => {
+    image = {
+      id: element.id,
+      img: new Image(),
+    };
+    //caraga de la url de la img
+    image.img.src = element.url_imagen;
 
+    //handle fallback para las imagenes no encontradas
+    image.img.onerror = function () {
+      handleErrorImage(this, element.id, images, urlNoImage);
+    };
+    images.push(image);
+    console.log("Imagen cargada de ", element.url_imagen);
+  });
+  return true;
+};
+
+module.exports = function getImage (images, id) {
+  let tmpUrl = null;
+  //console.log("id---->", id);
+  //console.log("images----->", images);
+  images.forEach((item) => {
+    //console.log(item);
+    if (item.id === id) {
+      tmpUrl = item.img.src;
+    }
+  });
+  return tmpUrl;
+};
