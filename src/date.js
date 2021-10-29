@@ -1,8 +1,8 @@
-exports.fecha = function (params) {
+export function fecha (opt) {
   const date = new Date();
   var tmpFecha = null;
 
-  switch (params) {
+  switch (opt) {
     case "today":
       tmpFecha =
         date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();

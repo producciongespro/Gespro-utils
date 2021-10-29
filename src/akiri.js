@@ -9,39 +9,55 @@ inputs-> url: url de API para obtener los datos
 output-> respuesta de servidor en formato JSON
 
 */
-exports.getData = async function (url) {
-  const resp = await fetch(url);
-  //console.log("response--->",resp);
-  const json = await resp.json();
-  //console.log("json-->",json);
+export async function getData(url) {
+  let res = null;
+  try {
+    res = await fetch(url);
+    res = await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+  return res;
+}
+
+export async function sendData (url, data, method) {
+  let res = null;
+  if (!method) {
+    method = "POST";
+  }
+
+  try {
+    res = await fetch(url, {
+      method: method,
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  res = await res.json();
+  return res;
+};
+
+export async function sendFormData (url, items, method) {
+  const formData = new FormData();
+
+  if (!method) {
+    method="POST"
+  }
+
+  for (let index = 0; index < items.length; index++) {
+    formData.append(items[index].name, items[index].val);
+    console.log("items[index].name", items[index].name);
+    console.log("items[index].val", items[index].val);
+  }
+
+  const resp = await fetch(url, {
+    method: method,
+    body: formData,
+  });
+  let json = await resp.json();
   return json;
 };
-
-exports.sendData = async function (url, data) {
-  const resp = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json",
-    }
-  });
-  let json= await resp.json();
-    return json;
-};
-
-exports.sendFormData = async  (url, items) => {
-    const formData = new FormData();
-  
-    for (let index = 0; index < items.length; index++) {
-      formData.append(items[index].name, items[index].val);
-      console.log("items[index].name", items[index].name);
-      console.log("items[index].val", items[index].val);
-    }
-  
-    const resp = await fetch(url, {
-      method: "POST",
-      body: formData,
-    });
-    let json = await resp.json();
-    return json;
-  };

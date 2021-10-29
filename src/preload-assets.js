@@ -1,4 +1,4 @@
-module.exports = function preloadAudios(array, audios ) {  
+export function preloadAudios(array, audios ) {  
   let itemAudio;
 
   array.forEach((element) => {
@@ -16,7 +16,7 @@ module.exports = function preloadAudios(array, audios ) {
   });  
 };
 
-module.exports = function getUrl  (array, id) {
+export function getUrl  (array, id) {
     console.log("id", id);
     let tmpUrl=null;
 
@@ -29,7 +29,7 @@ module.exports = function getUrl  (array, id) {
     return tmpUrl;
   };
 
-module.exports = function renderAudio(url) {
+export function renderAudio (url) {
   const visor = document.getElementById("visor");
   if (url) {
     visor.innerHTML = `
@@ -44,7 +44,7 @@ module.exports = function renderAudio(url) {
   }
 };
 
-module.exports = function  preloadImages (array, images, urlNoImage) {
+export function  preloadImages (array, images, urlNoImage) {
   /*
   images: empty array
   url: path image url 
@@ -70,7 +70,7 @@ module.exports = function  preloadImages (array, images, urlNoImage) {
   return true;
 };
 
-module.exports = function getImage (images, id) {
+export function getImage (images, id) {
   let tmpUrl = null;
   //console.log("id---->", id);
   //console.log("images----->", images);

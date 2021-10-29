@@ -1,5 +1,5 @@
 
-exports.buscar =  function (palabra, array) {    
+export  function buscar (palabra, array) {    
     let tmpArray=[];
     palabra= palabra.toLowerCase();
     palabra=eliminarTildes(palabra);

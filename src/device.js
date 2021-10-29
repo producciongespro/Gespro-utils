@@ -1,4 +1,4 @@
-exports.dispositivo =  function () {
+export function device () {
     let d = window.navigator.platform;
     //d= "win32";
     

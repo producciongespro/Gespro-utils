@@ -1,5 +1,8 @@
+/*
+ * Operaciones con almacenamiento local 
+ */
 
-exports.almacenar = function (nombre, valor) {
+export function setInfo (nombre, valor) {
     //console.log(nombre, "--->", valor);
     //Priemro verifica que el dato localstorage esté almacenado    
     let tmpData = localStorage.getItem(nombre);
@@ -42,13 +45,13 @@ exports.almacenar = function (nombre, valor) {
     return isAlmacenado;
 }
 
-exports.recuperar = function (nombre) {
+export function getInfo (nombre) {
     //console.log("nombre en obtener", nombre);
     let tmpData = localStorage.getItem(nombre);
     return JSON.parse(tmpData);
 }
 
-exports.encontrado= function (nombre, valor) {
+export function findInfo (nombre, valor) {
     let indice=-1;
     let tmpData = localStorage.getItem(nombre);
     if (tmpData) {
@@ -58,7 +61,7 @@ exports.encontrado= function (nombre, valor) {
   return indice;
 }
 
-exports.remover= function (nombre, valor) {
+export function deleteInfo (nombre, valor) {
     let tmpData = localStorage.getItem(nombre);
     let isEliminado=false;
     if (tmpData) {

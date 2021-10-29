@@ -1,5 +1,5 @@
 
-exports.filtrarKey =  function (array, llave, valor) {    
+export function filtrarKey (array, llave, valor) {    
     valor = valor.toString();
     
     //console.log("*********Filtro por criterio llave", llave);    
@@ -23,7 +23,7 @@ exports.filtrarKey =  function (array, llave, valor) {
     return tmpData;
 }
 
-exports.filtrarId =  function (array, id) {     
+export function filtrarId (array, id) {     
     //console.log("array recibido", array);
     const limite= array.length;
     let item=null;
