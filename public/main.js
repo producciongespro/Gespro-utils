@@ -1,4 +1,4 @@
-import * as utils from "../src/index.js";
+import * as utils from "./build/index.js";
 
 
 async function test() {
