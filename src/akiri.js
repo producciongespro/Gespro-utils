@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 /* 
 Funciones Ajax: get y post
 akiri del esperanto signfica obtener
