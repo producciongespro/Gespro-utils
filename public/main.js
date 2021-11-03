@@ -1,8 +1,16 @@
 import * as utils from "./build/index.js";
+const URI_API = "http://localhost:3500/test";
+const estudiante = {
+  nombre: "Pepito",
+  correo: "pepito@correo.de"
+}
 
 
 async function test() {
-    let res = await utils.getData("http://localhost/demoracia-a-la-mano/Webservices/obtener_videos_select.php");
+    //let res = await utils.getData(URI_API);
+    let res = await utils.sendData(URI_API, estudiante, "PUT");
+    
+    
     console.log(res);    
 }
 
