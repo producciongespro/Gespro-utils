@@ -50,8 +50,8 @@ export async function sendFormData (url, items, method) {
 
   for (let index = 0; index < items.length; index++) {
     formData.append(items[index].name, items[index].val);
-    console.log("items[index].name", items[index].name);
-    console.log("items[index].val", items[index].val);
+    //console.log("items[index].name", items[index].name);
+    //console.log("items[index].val", items[index].val);
   }
 
   const resp = await fetch(url, {

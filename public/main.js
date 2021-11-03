@@ -7,8 +7,8 @@ const estudiante = {
 
 
 async function test() {
-    //let res = await utils.getData(URI_API);
-    let res = await utils.sendData(URI_API, estudiante, "PUT");
+    let res = await utils.getData(URI_API);
+    //let res = await utils.sendData(URI_API, estudiante, "PUT");
     
     
     console.log(res);    

@@ -9,7 +9,7 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(express.static("public"));
 
-app.get("/test", ctr.getEstudiantes );
+app.get("/test", ctr.getData );
 app.post("/test", ctr.insertDato);
 app.put("/test", ctr.updateDato);
 
