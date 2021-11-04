@@ -1,9 +1,13 @@
-export function fecha (opt) {
+export default function _getToday (opt) {
   const date = new Date();
   var tmpFecha = null;
 
+  if (!opt) {
+    opt = "hoy";
+  }
+
   switch (opt) {
-    case "today":
+    case "t":
       tmpFecha =
         date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
       break;
@@ -11,23 +15,23 @@ export function fecha (opt) {
       tmpFecha =
         date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
       break;
-    case "mes":
+    case "m":    
       tmpFecha = date.getMonth() + 1;
       break;
-    case "dia":
+    case "d":
       tmpFecha = date.getDate();
       break;
-    case "objHoy":
+    case "full":
       tmpFecha = {
-        dia: date.getDate(),
-        mes: date.getMonth() + 1,
-        anno: date.getFullYear(),
+        day: date.getDate(),
+        month: date.getMonth() + 1,
+        year: date.getFullYear(),
       };
 
       break;
 
     default:
-      tmpFecha = "opción descnocida";
+      tmpFecha = "uknown option";
       break;
   }
   return tmpFecha;

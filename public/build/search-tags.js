@@ -1,4 +1,4 @@
-export default function smartSearchTags(word, array, field ) {
+export default function _searchTags(word, array, field ) {
   let tmpArray = [];
 
   //si la variable campo está vacía se agrega "tags" por defecto

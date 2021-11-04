@@ -1,5 +1,6 @@
 import * as akiri from "./akiri.js";
-import smartSearchTags from "./smart-search-tags.js";
+import _searchTags from "./search-tags.js";
+import _getToday from "./get-today.js";
 
 
 export async function getData(url) {
@@ -13,6 +14,10 @@ export async function sendData(url, data, method) {
 }
 
 export function searchTags (word, array, field) {
-    return smartSearchTags (word, array, field );
+    return _searchTags (word, array, field );
+}
+
+export function getToday (opt) {
+    return _getToday(opt)
 }
 
