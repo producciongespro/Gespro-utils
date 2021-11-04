@@ -7,11 +7,11 @@ const estudiante = {
 
 
 async function test() {
-    let res = await utils.getData(URI_API);
-    //let res = await utils.sendData(URI_API, estudiante, "PUT");
-    
-    
-    console.log(res);    
+    let data = await utils.getData(URI_API);
+    //let res = await utils.sendData(URI_API, estudiante, "PUT");   
+    console.log("REcibidos->", data);    
+    const filtrado = utils.searchTags("lion", data, "name" );
+    console.log("filtrado", filtrado);
 }
 
 
