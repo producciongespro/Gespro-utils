@@ -5,10 +5,10 @@
  Funciones generales para desarrollos de recursos Gespro
 
  ## Documentación de funciones
- >A continuación se detalla el contenido de cada uno de los ***scripts***, las funciones que contienen y para qué sirve cada una, los valroes que recibe como parametros y el dato que devuelve con ejemplos.
+ >A continuación se detalla el contenido de cada una de las ***funciones***, que contienen y para qué sirve cada una, los valroes que recibe como parametros y el dato que devuelve con ejemplos.
 
 
- ### akiri.js 👇
+ ### Obtener y enviar datos a servidor 👇
  ---
  Este *script* contiene dos funciones: ***getData*** y ***sendData***:
 
@@ -31,13 +31,17 @@
 
 
 #### sendData 🔥
-``sendData (data, url) ``
+``sendData (data, url, method) ``
 
 >Envia un formdata a una API mediante el método *POST* de *fetch* 
 
 + Parámetros: 🖐
 1. **data**: dato en formato *JSON*
+
 2. **url**: recibe la url de la API o servicio que recibe el dato mediante el método *POST*
+
+2. **method**: Tipo de acción (REST) que ejecuta (POST, PUT, DELETE, GET). Si omite el valor en este campo se entenderá que la acción por defecto es un *POST*
+
 
 + Valor que devuelve: la popiedad *data* de la respuesta del servidor (en formato *JSON*).
 
@@ -48,26 +52,29 @@ let data = {
       "nombre": "Pepito Campos",
       "correo": "pepito@correo.de"
   };
-let resp = await sendData (data, url); 
+let resp = await sendData (data, url, 'PUT'); 
 console.log(resp);
 ~~~
 
- ### buscador.js 👇
+ ### Buscar palabras en un determinado campo 👇
  ---
- Este *script* contiene solamente una función: ***buscar***:
+ Este *script* contiene solamente una función: ***searchTags***:
 
 #### buscar 🔥
-`` buscar (palabra, array)``
-> Recibe un arreglo de objetos y busca mediante una expresión regular (*reg test*) en la propiedad ***"tags"***, la palabra que recibe mediante parámetro.
+`` searchTags (word, array, field)``
+> Recibe un arreglo de objetos y busca mediante una expresión regular (*reg test*) en la propiedad ***"tags"***, o en un campo determinado la palabra que recibe mediante parámetro.
 
 + Parámetros: 🖐️
-1. **url**: recibe la url de la API o servicio web para realizar la solicitud *(request)*
+1. **word**: Palabra a buscar en el campo "tags" o en un campo defnido por el usuario.
 
-+ Valor que devuelve: la popiedad *data* de la respuesta del servidor (en formato *JSON*)
+2. **array**: Arreglo de objetos de js (formato JSON) en donde se va a realizar la búsqueda.
+
+3. **field**: Nombre del campo en que se va a realizar la búqueda. Si se omite su valor se entiende que buscará por defecto en un campo que se llama "tags"
+
++ Valor que devuelve:Arreglo de objetos filtrados en  formato *JSON*
 
 **Ejemplo:** 📜
 ~~~
-  const { buscar } = require("./buscador");
 
 let recursos = [
   {
@@ -80,7 +87,7 @@ let recursos = [
   },
 ];
 
-let filtrados = buscar("sumas", recursos);
+let filtrados = searchTags ("sumas", recursos, "tags")
 console.log("filtrados", filtrados);
   ~~~
 
