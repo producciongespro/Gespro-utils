@@ -5,17 +5,17 @@ export function device () {
      switch (d) {
        case "Linux armv7l":
        case "Linux armv8l":
-       case "iPhone":
-       case "iPad":
-        d = "movil";
+       case "iPhone":       
+        d = "mobile";
          break;
        case "win32":
-        d = "escritorio";
-         //plataforma = "movil";
+        d = "desktop";         
          break;
+        case "iPad":
+          d = "iPad"
+          break;
        default:
-        d = "escritorio";
-         //plataforma = "movil";
+        d = "desktop";         
          break;
      }         
      return d;     

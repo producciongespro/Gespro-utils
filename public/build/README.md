@@ -56,7 +56,7 @@ let resp = await sendData (data, url, 'PUT');
 console.log(resp);
 ~~~
 
- ### Buscar palabras en un determinado campo 👇
+ ### Buscar palabras en un determinado campo (etiquetas) 👇
  ---
  Este *script* contiene solamente una función: ***searchTags***:
 
@@ -92,29 +92,38 @@ console.log("filtrados", filtrados);
   ~~~
 
 
-  ### fecha.js 👇
+  ### Obtener la fecha actual👇
  ---
- Este *script* contiene solamente una función: ***fecha***:
+ Este *script* contiene solamente una función: ***getToday***:
 
-#### fecha 🔥
+#### getToday 🔥
 `` fecha (params)``
 > Recibe una palabra *(string)* que determina el formato de fecha o el valor de fecha del sistema que debe devolver:
 
 + Parámetro: 🖐️
-1. **params**: Especifica el formato o tipo de dato de fecha que debe devolver: ***"today", "hoy", "mes", "dia", "objHoy"***
+1. **params**: Especifica el formato o tipo de dato de fecha que debe devolver: 
+
+***"t"*** 👉 (today) Deveule la fecha de actual en formato  aa-mm-dd 
+
+***"m"*** 👉 (month) Devuelve el mes actual
+
+***"d"*** 👉 (day) Devuelve la fecha del día actual
+
+***"full"*** Devuelve un objeto con las propiedades "day, month, year" actuales
+
+📣 Importante: Si no recibe parámetros devuelve la fecha actual en formato dd-mm-yy
 
 + Valor que devuelve: fecha del sistema en diferentes formatos. **Nota:** el mes 1 corresponde a enero.
 
 
 **Ejemplo:** 📜
 ~~~
-const {fecha} = require("./fecha");
 
-console.log( "Fecha en formato YY-M-D:", fecha("today") );
-console.log( "Fecha de hoy en formato DD-M-YY:", fecha("hoy") );
-console.log("Mes actual:", fecha("mes") );
-console.log("dia de hoy:", fecha("dia") );
-console.log( "Objeto con la fecha actual:", fecha("objHoy") );
+console.log( "Fecha en formato YY-M-D:", fecha("t") );
+console.log( "Fecha de hoy en formato DD-M-YY:", fecha() );
+console.log("Mes actual:", fecha("m") );
+console.log("dia de hoy:", fecha("d") );
+console.log( "Objeto con la fecha actual:", fecha("full") );
 ~~~
 
 
