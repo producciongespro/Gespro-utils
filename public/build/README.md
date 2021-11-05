@@ -119,18 +119,57 @@ console.log("filtrados", filtrados);
 **Ejemplo:** 📜
 ~~~
 
-console.log( "Fecha en formato YY-M-D:", fecha("t") );
-console.log( "Fecha de hoy en formato DD-M-YY:", fecha() );
-console.log("Mes actual:", fecha("m") );
-console.log("dia de hoy:", fecha("d") );
-console.log( "Objeto con la fecha actual:", fecha("full") );
+console.log( "Fecha en formato YY-M-D:", getToday("t") );
+console.log( "Fecha de hoy en formato DD-M-YY:", getToday() );
+console.log("Mes actual:", getToday("m") );
+console.log("dia de hoy:", getToday("d") );
+console.log( "Objeto con la fecha actual:", getToday("full") );
+~~~
+
+ ### Almacenamiento en *local storage* 👇
+---
+ Este *script* contiene una serie de funciones que administran datos en *Local Storage*.
+
+`` stIns(name, value)``
+> Inserta en localStorage un arreglo, el cual puede contener cadenas de texto, objetos, números o booleanos.
+
+**Ejemplo:** 📜
+~~~
+stIns("estudiantes", "Pepito");
+~~~
+
+`` stGet(name) ``
+>Obtiene el arreglo del dato almacenado por el nombre.
+
+**Ejemplo:** 📜
+~~~
+const estudiantes = stGet("estudiantes");
+console.log(estudiantes)
+// ["pepito"]
+~~~
+
+```stFind(name, value)```
+>Devuelve el índice del elemento buscado. Si no se encuentra el elemento devuelve un -1
+
+**Ejemplo:** 📜
+~~~
+const index = stFind("estudiantes", "Pepito");
+console.log(index)
+// 0
+~~~
+
+```stDel(name, value)```
+>Elimina un objeto almacedo en determinado array (name).
+
+**Ejemplo:** 📜
+~~~
+const isBorrado = stDel("estudiantes", "Pepito);
+console.log(isBorrado);
+//true
 ~~~
 
 
-  ### plataforma.js 👇
- ---
- Este *script* contiene solamente una función: ***fecha***:
-
+---
 #### Detectar tipo de plataforma 🔥
-`` devie ()``
+`` device ()``
 > 😞 Esta fucnión ha sido removida ya que utiliza para su implementación navigator.platform, la cual está obsoleta. Se investigan alternativas, no obstante están en fase de experimentación y no cumplen estándares para su compatibilidad.

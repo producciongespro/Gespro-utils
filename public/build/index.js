@@ -74,7 +74,7 @@ export function stIns(name, value) {
 }
 
 /**
- * ***Storage Get Data:*** Obtiene el arreglo almacenado por el nombre.
+ * ***Storage Get Data:*** Obtiene el arreglo del dato almacenado por el nombre.
  * @param {string} name 
  * @returns {array} arreglo de datos alamcenados en local storage.
  */
@@ -83,7 +83,7 @@ export function stGet(name) {
 }
 
 /**
- * ***Storage find element:*** Devuel el índice del elemento buscado. Si no se encuentra el elemento 
+ * ***Storage find element:*** Devuelve el índice del elemento buscado. Si no se encuentra el elemento 
  * devuelve un -1
  * @param {string} name 
  * @param {string} value 
@@ -98,7 +98,7 @@ export function stFind(name, value) {
  * ***Storage delete:*** Elimina un objeto almacedo en determinado array (name)
  * @param {string} name 
  * @param {string} value 
- * @returns {boolean} retorna ferdadero si realizó la operación de eliminado.
+ * @returns {boolean} retorna verdadero si realizó la operación de eliminado.
  */
 export function stDel(name, value) {
   return del(name, value);
