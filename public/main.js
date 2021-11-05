@@ -36,7 +36,7 @@ const estudiante = {
   id: "123654789"
 }
 
-//utils.stIns("estudiantes", estudiante);
+console.log(utils.stGet("estudiantes"));
 //let estudiantes = utils.stGet("estudiantes");
 //console.log(estudiantes);
 
