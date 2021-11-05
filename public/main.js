@@ -30,7 +30,21 @@ async function test() {
  * get date (today)
  * console.log(utils.getToday("full"));
  */
+const estudiante = {
+  nombre: "Pepito",
+  correo: "pepito@correo.de",
+  id: "123654789"
+}
 
+//utils.stIns("estudiantes", estudiante);
+//let estudiantes = utils.stGet("estudiantes");
+//console.log(estudiantes);
+
+//let indice = utils.stFind("estudiantes", "Pepe");
+//console.log(indice);
+
+//let res = utils.stDel("estudiantes", "Lola");
+//console.log(res);
 
     
 }

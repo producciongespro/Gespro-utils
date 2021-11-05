@@ -131,19 +131,6 @@ console.log( "Objeto con la fecha actual:", fecha("full") );
  ---
  Este *script* contiene solamente una función: ***fecha***:
 
-#### plataforma 🔥
-`` plataforma ()``
-> Recibe una palabra *(string)* que determina el formato de fecha o el valor de fecha del sistema que debe devolver:
-
-+ Parámetro: 🖐️
-No recibe ningún parámetro.
-
-+ Valor que devuelve: Tipo de plataforma en la que se ejecuta la función. Por lo que se relaciona con el dipositivo. A saber: "escritorio" o "movil"
-
-
-**Ejemplo:** 📜
-~~~
-const {dispositivo} = require("./dispositivo");
-
-console.log( "Estoy en un dispositivo", dispositivo() );
-~~~
+#### Detectar tipo de plataforma 🔥
+`` devie ()``
+> 😞 Esta fucnión ha sido removida ya que utiliza para su implementación navigator.platform, la cual está obsoleta. Se investigan alternativas, no obstante están en fase de experimentación y no cumplen estándares para su compatibilidad.
