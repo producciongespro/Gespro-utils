@@ -2,6 +2,7 @@ import * as akiri from "./akiri.js";
 import _searchTags from "./search-tags.js";
 import _getToday from "./get-today.js";
 import { ins, get, find, del } from "./storage.js";
+import {findById, findByKey} from "./arrays.js";
 
 /**
  * ***Get Data:*** Obtiene datos de un servicio REST en formato JSON
@@ -93,7 +94,6 @@ export function stFind(name, value) {
   return find(name, value);
 }
 
-
 /**
  * ***Storage delete:*** Elimina un objeto almacedo en determinado array (name)
  * @param {string} name 
@@ -103,3 +103,27 @@ export function stFind(name, value) {
 export function stDel(name, value) {
   return del(name, value);
 }
+
+/**
+ * **Find by id in array:** Busca un elemento de un array mediante el campo id.
+ * @param {Array} array 
+ * @param {String} id 
+ * @returns {Object} Objeto encontrado (registro)
+ */
+export function arrayFindById (array, id ) {
+  const res = findById(array, id);
+  return res;
+} 
+
+/**
+ * **Find by key in array:** Obtiene un arreglo filtrado por una palabra determinada (word)
+ * en un campo dato (key).
+ * @param {array} array 
+ * @param {String} key 
+ * @param {*} word 
+ * @returns {array} arreglo filtrado.
+ */
+export function arrayFindByKey(array, key, word) {
+  return res = findByKey(array, key, word);
+}
+

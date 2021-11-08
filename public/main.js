@@ -46,6 +46,8 @@ const estudiante = {
 //let res = utils.stDel("estudiantes", "Lola");
 //console.log(res);
 
+let obj = utils.arrayFindByKey()
+
     
 }
 
