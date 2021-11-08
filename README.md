@@ -4,11 +4,30 @@
 # Gespro-utils
  Funciones generales para desarrollos de recursos Gespro
 
+ ## Uso
+ ### 1- Instalción:
+
+ ``npm i gespro-utils``
+
+### 2- Import:
+
+ ``import * as utils from "gespro-utls"``
+
+o
+
+``const utils = require("gespro-utils");``
+
+### 3- Llamado a funciones:
+
+``utils.getDate()``
+
+
+
  ## Documentación de funciones
- >A continuación se detalla el contenido de cada uno de los ***scripts***, las funciones que contienen y para qué sirve cada una, los valroes que recibe como parametros y el dato que devuelve con ejemplos.
+ >A continuación se detalla el contenido de cada una de las ***funciones***, que contienen y para qué sirve cada una, los valroes que recibe como parametros y el dato que devuelve con ejemplos.
 
 
- ### akiri.js 👇
+ ### Obtener y enviar datos a servidor 👇
  ---
  Este *script* contiene dos funciones: ***getData*** y ***sendData***:
 
@@ -31,13 +50,17 @@
 
 
 #### sendData 🔥
-``sendData (data, url) ``
+``sendData (data, url, method) ``
 
 >Envia un formdata a una API mediante el método *POST* de *fetch* 
 
 + Parámetros: 🖐
 1. **data**: dato en formato *JSON*
+
 2. **url**: recibe la url de la API o servicio que recibe el dato mediante el método *POST*
+
+2. **method**: Tipo de acción (REST) que ejecuta (POST, PUT, DELETE, GET). Si omite el valor en este campo se entenderá que la acción por defecto es un *POST*
+
 
 + Valor que devuelve: la popiedad *data* de la respuesta del servidor (en formato *JSON*).
 
@@ -48,26 +71,29 @@ let data = {
       "nombre": "Pepito Campos",
       "correo": "pepito@correo.de"
   };
-let resp = await sendData (data, url); 
+let resp = await sendData (data, url, 'PUT'); 
 console.log(resp);
 ~~~
 
- ### buscador.js 👇
+ ### Buscar palabras en un determinado campo (etiquetas) 👇
  ---
- Este *script* contiene solamente una función: ***buscar***:
+ Este *script* contiene solamente una función: ***searchTags***:
 
 #### buscar 🔥
-`` buscar (palabra, array)``
-> Recibe un arreglo de objetos y busca mediante una expresión regular (*reg test*) en la propiedad ***"tags"***, la palabra que recibe mediante parámetro.
+`` searchTags (word, array, field)``
+> Recibe un arreglo de objetos y busca mediante una expresión regular (*reg test*) en la propiedad ***"tags"***, o en un campo determinado la palabra que recibe mediante parámetro.
 
 + Parámetros: 🖐️
-1. **url**: recibe la url de la API o servicio web para realizar la solicitud *(request)*
+1. **word**: Palabra a buscar en el campo "tags" o en un campo defnido por el usuario.
 
-+ Valor que devuelve: la popiedad *data* de la respuesta del servidor (en formato *JSON*)
+2. **array**: Arreglo de objetos de js (formato JSON) en donde se va a realizar la búsqueda.
+
+3. **field**: Nombre del campo en que se va a realizar la búqueda. Si se omite su valor se entiende que buscará por defecto en un campo que se llama "tags"
+
++ Valor que devuelve:Arreglo de objetos filtrados en  formato *JSON*
 
 **Ejemplo:** 📜
 ~~~
-  const { buscar } = require("./buscador");
 
 let recursos = [
   {
@@ -80,54 +106,89 @@ let recursos = [
   },
 ];
 
-let filtrados = buscar("sumas", recursos);
+let filtrados = searchTags ("sumas", recursos, "tags")
 console.log("filtrados", filtrados);
   ~~~
 
 
-  ### fecha.js 👇
+  ### Obtener la fecha actual👇
  ---
- Este *script* contiene solamente una función: ***fecha***:
+ Este *script* contiene solamente una función: ***getToday***:
 
-#### fecha 🔥
+#### getToday 🔥
 `` fecha (params)``
 > Recibe una palabra *(string)* que determina el formato de fecha o el valor de fecha del sistema que debe devolver:
 
 + Parámetro: 🖐️
-1. **params**: Especifica el formato o tipo de dato de fecha que debe devolver: ***"today", "hoy", "mes", "dia", "objHoy"***
+1. **params**: Especifica el formato o tipo de dato de fecha que debe devolver: 
+
+***"t"*** 👉 (today) Deveule la fecha de actual en formato  aa-mm-dd 
+
+***"m"*** 👉 (month) Devuelve el mes actual
+
+***"d"*** 👉 (day) Devuelve la fecha del día actual
+
+***"full"*** Devuelve un objeto con las propiedades "day, month, year" actuales
+
+📣 Importante: Si no recibe parámetros devuelve la fecha actual en formato dd-mm-yy
 
 + Valor que devuelve: fecha del sistema en diferentes formatos. **Nota:** el mes 1 corresponde a enero.
 
 
 **Ejemplo:** 📜
 ~~~
-const {fecha} = require("./fecha");
 
-console.log( "Fecha en formato YY-M-D:", fecha("today") );
-console.log( "Fecha de hoy en formato DD-M-YY:", fecha("hoy") );
-console.log("Mes actual:", fecha("mes") );
-console.log("dia de hoy:", fecha("dia") );
-console.log( "Objeto con la fecha actual:", fecha("objHoy") );
+console.log( "Fecha en formato YY-M-D:", getToday("t") );
+console.log( "Fecha de hoy en formato DD-M-YY:", getToday() );
+console.log("Mes actual:", getToday("m") );
+console.log("dia de hoy:", getToday("d") );
+console.log( "Objeto con la fecha actual:", getToday("full") );
 ~~~
 
+ ### Almacenamiento en *local storage* 👇
+---
+ Este *script* contiene una serie de funciones que administran datos en *Local Storage*.
 
-  ### plataforma.js 👇
- ---
- Este *script* contiene solamente una función: ***fecha***:
-
-#### plataforma 🔥
-`` plataforma ()``
-> Recibe una palabra *(string)* que determina el formato de fecha o el valor de fecha del sistema que debe devolver:
-
-+ Parámetro: 🖐️
-No recibe ningún parámetro.
-
-+ Valor que devuelve: Tipo de plataforma en la que se ejecuta la función. Por lo que se relaciona con el dipositivo. A saber: "escritorio" o "movil"
-
+`` stIns(name, value)``
+> Inserta en localStorage un arreglo, el cual puede contener cadenas de texto, objetos, números o booleanos.
 
 **Ejemplo:** 📜
 ~~~
-const {dispositivo} = require("./dispositivo");
-
-console.log( "Estoy en un dispositivo", dispositivo() );
+stIns("estudiantes", "Pepito");
 ~~~
+
+`` stGet(name) ``
+>Obtiene el arreglo del dato almacenado por el nombre.
+
+**Ejemplo:** 📜
+~~~
+const estudiantes = stGet("estudiantes");
+console.log(estudiantes)
+// ["pepito"]
+~~~
+
+```stFind(name, value)```
+>Devuelve el índice del elemento buscado. Si no se encuentra el elemento devuelve un -1
+
+**Ejemplo:** 📜
+~~~
+const index = stFind("estudiantes", "Pepito");
+console.log(index)
+// 0
+~~~
+
+```stDel(name, value)```
+>Elimina un objeto almacedo en determinado array (name).
+
+**Ejemplo:** 📜
+~~~
+const isBorrado = stDel("estudiantes", "Pepito);
+console.log(isBorrado);
+//true
+~~~
+
+
+---
+#### Detectar tipo de plataforma 🔥
+`` device ()``
+> 😞 Esta fucnión ha sido removida ya que utiliza para su implementación navigator.platform, la cual está obsoleta. Se investigan alternativas, no obstante están en fase de experimentación y no cumplen estándares para su compatibilidad.
