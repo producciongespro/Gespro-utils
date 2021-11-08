@@ -1,6 +1,6 @@
 {
   "name": "gespro-utils",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Funciones generales para desarrollos de recursos Gespro",
   "main": "src/app.js",
   "type": "module",

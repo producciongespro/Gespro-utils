@@ -188,6 +188,31 @@ console.log(isBorrado);
 ~~~
 
 
+
+ ### Búsquedas en arreglos 👇
+---
+ Este *script* contiene una dos funciones que realizan búsuquedas en areglos de objetos. Una mediante un ID y la otra mediante una campo clave.
+
+`` arrayFindById(array, id )``
+> Buesca un objeto (registro - documento) en un arreglo de objetos mediante el campo *id*. Este campo puede ser numérico o texto.
+
+**Ejemplo:** 📜
+~~~
+const item = arrayFindById(estudiantes, "1-0123-0321" );
+~~~
+
+
+`` arrayFindByKey(array, key, word )``
+> Buesca un objeto (registro - documento) en un arreglo de objetos mediante un campo clave *key* con una palabra dada (word).
+
+**Ejemplo:** 📜
+~~~
+let filtrado = [];
+filtrado = arrayFindByKey(estudiantes, "nivel", 2 );
+~~~
+
+
+
 ---
 #### Detectar tipo de plataforma 🔥
 `` device ()``
