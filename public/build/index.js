@@ -14,7 +14,7 @@ export async function getData(url) {
 }
 
 /**
- * ***Send Data:*** Envia datos al servidor en dormato json
+ * ***Send Data:*** Envia datos al servidor en formato json
  * @param {string} url
  * @param {object} data
  * @param {string} method

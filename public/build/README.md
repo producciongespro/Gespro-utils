@@ -4,6 +4,25 @@
 # Gespro-utils
  Funciones generales para desarrollos de recursos Gespro
 
+ ## Uso
+ ### 1- Instalción:
+
+ ``npm i gespro-utils``
+
+### 2- Import:
+
+ ``import * as utils from "gespro-utls"``
+
+o
+
+``const utils = require("gespro-utils");``
+
+### 3- Llamado a funciones:
+
+``utils.getDate()``
+
+
+
  ## Documentación de funciones
  >A continuación se detalla el contenido de cada una de las ***funciones***, que contienen y para qué sirve cada una, los valroes que recibe como parametros y el dato que devuelve con ejemplos.
 
