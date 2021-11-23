@@ -215,5 +215,11 @@ filtrado = arrayFindByKey(estudiantes, "nivel", 2 );
 
 ---
 #### Detectar tipo de plataforma 🔥
-`` device ()``
-> 😞 Esta fucnión ha sido removida ya que utiliza para su implementación navigator.platform, la cual está obsoleta. Se investigan alternativas, no obstante están en fase de experimentación y no cumplen estándares para su compatibilidad.
+`` platform ()``
+> Detecta la platforma en la que se está ejecutando la aplicación JS.
+
+* No lleva paramétros.
+~~~
+ console.log (platform() ); 
+//Posibles resultados:  win - mac - linux - android - ios - null (en caso que no detecte el tipo).
+~~~

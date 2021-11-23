@@ -3,6 +3,7 @@ import _searchTags from "./search-tags.js";
 import _getToday from "./get-today.js";
 import { ins, get, find, del } from "./storage.js";
 import {findById, findByKey} from "./arrays.js";
+import _platform from "./platform.js";
 
 /**
  * ***Get Data:*** Obtiene datos de un servicio REST en formato JSON
@@ -125,5 +126,16 @@ export function arrayFindById (array, id ) {
  */
 export function arrayFindByKey(array, key, word) {
   return res = findByKey(array, key, word);
+}
+
+/**
+ * Get kind of device (platform) runing the app.
+ * 
+ * *[ win - mac - linux - android - ios ]*
+ * @param {empty} 
+ * @returns {string} platform
+ */
+export function platform() {
+    return _platform();
 }
 
