@@ -7,6 +7,7 @@ const estudiante = {
 
 
 async function test() {
+  
   /*
   *akiri get data
   let data = await utils.getData(URI_API);
@@ -30,12 +31,14 @@ async function test() {
  * get date (today)
  * console.log(utils.getToday("full"));
  */
+
+/*
 const estudiante = {
   nombre: "Pepito",
   correo: "pepito@correo.de",
   id: "123654789"
 }
-
+*/
 //console.log(utils.stGet("estudiantes"));
 //let estudiantes = utils.stGet("estudiantes");
 //console.log(estudiantes);
@@ -48,7 +51,11 @@ const estudiante = {
 
 //let obj = utils.arrayFindByKey()
 
-console.log(utils.platform());
+//console.log(utils.platform());
+
+console.log( utils.dateConvert("2022-02-22") );
+
+
 
     
 }
