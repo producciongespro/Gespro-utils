@@ -223,3 +223,14 @@ filtrado = arrayFindByKey(estudiantes, "nivel", 2 );
  console.log (platform() ); 
 //Posibles resultados:  win - mac - linux - android - ios - null (en caso que no detecte el tipo).
 ~~~
+
+---
+#### Convertir fecha en fomrato DD/MM/YY 📅
+`` dateConvert ()``
+> Recibe como parámetro un string de fecha con formato YY/MM/DD y devuelve la fecha en un string con el formato **DD/MM/YY**
+
+* Parpametro: String de fecha. Ej: dateConvert("2022-02-22")
+~~~
+ console.log (dateConvert("2022-02-22") ); 
+// Retorna "22/02/2022"
+~~~
