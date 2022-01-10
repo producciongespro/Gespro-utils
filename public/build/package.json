@@ -1,7 +1,7 @@
 {
   "name": "gespro-utils",
-  "version": "2.3.2",
-  "description": "Funciones generales del lado del lciente para desarrollos de recursos Gespro",
+  "version": "2.4.2",
+  "description": "Funciones generales del lado del cliente para desarrollos de recursos Gespro",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

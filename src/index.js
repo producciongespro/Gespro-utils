@@ -145,6 +145,6 @@ export function platform() {
  * @param {date} date 
  */
 export function dateConvert (date) {
-  _dateConvert(date);
+  return _dateConvert (date);
 }
 

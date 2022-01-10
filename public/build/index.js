@@ -4,6 +4,7 @@ import _getToday from "./get-today.js";
 import { ins, get, find, del } from "./storage.js";
 import {findById, findByKey} from "./arrays.js";
 import _platform from "./platform.js";
+import _dateConvert from "./date-convert.js";
 
 /**
  * ***Get Data:*** Obtiene datos de un servicio REST en formato JSON
@@ -137,5 +138,13 @@ export function arrayFindByKey(array, key, word) {
  */
 export function platform() {
     return _platform();
+}
+
+/**
+ * Convert date from YY-DD-MM to DD-MM-YY
+ * @param {date} date 
+ */
+export function dateConvert (date) {
+  return _dateConvert (date);
 }
 
