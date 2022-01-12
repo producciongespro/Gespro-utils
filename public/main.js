@@ -10,7 +10,7 @@ const estudiante = {
 
 onload = () => {
 
-console.log(utils.dateConvert ("2022-02-22")  );
+console.log(utils.dateConvert ("2022-01-22", "text" )  );
 
 }
 
