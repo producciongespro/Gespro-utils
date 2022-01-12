@@ -142,9 +142,15 @@ export function platform() {
 
 /**
  * Convert date from YY-DD-MM to DD-MM-YY
- * @param {date} date 
+ * 
+* 🗓️ if mode == "text" returns "dd MONTH. YY"
+*
+* 📆 if mode == null returns "dd/mm/yy"
+ * @param {String} date 
+ * @param {String} mode 
+ * @returns {String} convertedDate
  */
-export function dateConvert (date) {
-  return _dateConvert (date);
+export function dateConvert (date, mode) {
+  return _dateConvert (date, mode );
 }
 

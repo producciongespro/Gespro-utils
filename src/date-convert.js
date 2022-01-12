@@ -1,5 +1,30 @@
-export default function _dateConvert (param) {
-    let arrayDate = param.split("-");
-    let newDate = `${arrayDate[2]}/${arrayDate[1]}/${arrayDate[0]}`; 
-    return newDate;     
-};
+export default function _dateConvert(param, mode) {
+  let newDate;
+  let months = [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun",
+    "jul",
+    "ago",
+    "set",
+    "oct",
+    "nov",
+    "dic",
+  ];
+
+  let arrayDate = param.split("-");
+  let day = arrayDate[2];
+  let month = arrayDate[1];
+  let year = arrayDate[0];
+
+  if (mode === "text") {
+    newDate = `${day} ${months[parseInt(month) - 1]}. ${year}`;
+  } else {
+    newDate = `${day}/${month}/${year}`;
+  }
+
+  return newDate;
+}

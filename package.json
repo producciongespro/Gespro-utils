@@ -1,7 +1,7 @@
 {
   "name": "gespro-utils",
-  "version": "2.4.3",
-  "description": "Funciones generales para desarrollos de recursos Gespro",
+  "version": "2.5.3",
+  "description": "Funciones generales del lado del cliente para desarrollos de recursos cliente en JS",
   "main": "src/app.js",
   "type": "module",
   "scripts": {
