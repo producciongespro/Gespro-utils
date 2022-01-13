@@ -122,11 +122,13 @@ console.log("filtrados", filtrados);
 + Parámetro: 🖐️
 1. **params**: Especifica el formato o tipo de dato de fecha que debe devolver: 
 
-***"t"*** 👉 (today) Deveule la fecha de actual en formato  aa-mm-dd 
+***"t"*** 👉 (today) Deveule la fecha de actual en formato  aa-mm-dd
 
-***"m"*** 👉 (month) Devuelve el mes actual
+***"m"*** 👉 (month) Devuelve el mes actual.
 
-***"d"*** 👉 (day) Devuelve la fecha del día actual
+***"d"*** 👉 (day) Devuelve la fecha del día actual.
+
+***"y"*** 👉 (year) Devuelve el año actual.
 
 ***"full"*** Devuelve un objeto con las propiedades "day, month, year" actuales
 
