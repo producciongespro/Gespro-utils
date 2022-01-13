@@ -10,7 +10,7 @@ const estudiante = {
 
 onload = () => {
 
-  console.log(utils.getToday("full"));
+  console.log(utils.getToday("y").toString()  );
 
 }
 
