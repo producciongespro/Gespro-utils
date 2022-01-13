@@ -1,6 +1,12 @@
-export default function _getToday (opt) {
-  const date = new Date();
-  var tmpFecha = null;
+
+const date = new Date();
+const year = date.getFullYear();
+const month= date.getMonth()+1;
+const day = date.getDate();
+
+
+export default function _getToday (opt) {  
+  let tmpDate = null;
 
   if (!opt) {
     opt = "hoy";
@@ -8,31 +14,40 @@ export default function _getToday (opt) {
 
   switch (opt) {
     case "t":
-      tmpFecha =
-        date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+      tmpDate = addZero();
       break;
     case "hoy":
-      tmpFecha =
-        date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+      tmpDate =    day + "-" + month + "-" + year;
       break;
     case "m":    
-      tmpFecha = date.getMonth() + 1;
+      tmpDate = month;
       break;
     case "d":
-      tmpFecha = date.getDate();
+      tmpDate = day;
       break;
     case "full":
-      tmpFecha = {
-        day: date.getDate(),
-        month: date.getMonth() + 1,
-        year: date.getFullYear(),
-      };
-
+      tmpDate = { day,   month,     year      };
       break;
 
     default:
-      tmpFecha = "uknown option";
+      tmpDate = "uknown option";
       break;
   }
-  return tmpFecha;
+  return tmpDate;
 };
+
+
+
+function addZero () {
+  let newDate;
+  const year = date.getFullYear();
+  const month= date.getMonth()+1;
+  const day = date.getDate();
+
+  if (month <= 9) {
+      newDate = `${year}-0${month}-${day}`        
+  } else {
+      newDate = `${year}-${month}-${day}`
+  }
+  return newDate;
+}
