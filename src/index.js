@@ -126,7 +126,8 @@ export function arrayFindById (array, id ) {
  * @returns {array} arreglo filtrado.
  */
 export function arrayFindByKey(array, key, word) {
-  return res = findByKey(array, key, word);
+  const res = findByKey(array, key, word);
+  return res
 }
 
 /**

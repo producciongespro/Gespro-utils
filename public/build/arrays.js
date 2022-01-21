@@ -8,7 +8,7 @@ export function findByKey (array, llave, valor) {
     
     if (array.length > 0) {
         const limite = array.length;
-        var tmpData = [];
+        let tmpData = [];
                 
 
         for (let index = 0; index < limite; index++) { 
