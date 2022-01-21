@@ -2,10 +2,14 @@
   "name": "gespro-utils",
   "version": "2.5.9",
   "description": "Funciones generales del lado del cliente para desarrollos de recursos cliente en JS",
-  "main": "src/app.js",
+  "source": "src/index.js",
+  "main": "dist/main.js", 
+  "module": "dist/module.js", 
   "type": "module",
   "scripts": {
-    "dev": "nodemon server/app.js"
+    "dev": "nodemon server/app.js",
+    "watch": "parcel watch",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -22,5 +26,8 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.14"
+  },
+  "devDependencies": {
+    "parcel": "^2.2.1"
   }
 }
