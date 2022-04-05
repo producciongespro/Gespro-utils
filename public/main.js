@@ -8,9 +8,9 @@ const estudiante = {
 }
 */
 
-onload = () => {
+onload = async () => {
 
-  console.log(utils.getToday("y").toString()  );
+ 
 
 }
 

@@ -11,31 +11,47 @@ output-> respuesta de servidor en formato JSON
 */
 export async function getData(url) {
   let res = null;
-  try {
-    res = await fetch(url);
-    res = await res.json();
-  } catch (error) {
-    console.log(error);
+  
+  const options = {
+	method: "GET",
+	headers: new Headers({
+		'Accept': 'application/json'    
+    })
+	
   }
+
+  try {
+    res = await fetch(url, options);
+	//console.log ("res", res);
+  } catch (error) {
+    console.log("error", error);
+  }
+  res = await res.json();
   return res;
 }
 
 export async function sendData (url, data, method) {
-  let res = null;
+  let res = null;  
+  
   if (!method) {
-    method = "POST";
+      method = "POST";    
+  }  
+
+  const options = {
+    method,
+    body: JSON.stringify(data),			
+    headers: new Headers({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+                   
+    })	
   }
 
   try {
-    res = await fetch(url, {
-      method: method,
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    res = await fetch(url, options);
+    //console.log ("res", res);
   } catch (error) {
-    console.log(error);
+    console.log("error", error);
   }
   res = await res.json();
   return res;
