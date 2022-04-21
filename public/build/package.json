@@ -1,6 +1,6 @@
 {
   "name": "gespro-utils",
-  "version": "2.6.10",
+  "version": "2.7.10",
   "description": "Funciones generales del lado del cliente para desarrollos de recursos cliente en JS",
   "main": "index.js",
   "scripts": {

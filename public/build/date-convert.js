@@ -22,10 +22,20 @@ export default function _dateConvert(param, mode) {
   let year = arrayDate[0];
 
   if (mode === "text") {
-    newDate = `${day} ${months[parseInt(month) - 1]}. ${year}`;
+    if (time) {
+      newDate = `${day} ${months[parseInt(month) - 1]}. ${year} a la(s): ${time}`;
+    } else {
+      newDate = `${day} ${months[parseInt(month) - 1]}. ${year}`;
+    }
+  
+} else {
+  if (time) {
+    newDate = `${day}/${month}/${year} ${time}`;
   } else {
     newDate = `${day}/${month}/${year}`;
   }
+  
+}
 
   return newDate;
 }
