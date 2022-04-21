@@ -15,8 +15,9 @@ export default function _dateConvert(param, mode) {
     "dic",
   ];
 
-  let arrayDate = param.split("-");
-  let day = arrayDate[2];
+  let arrayDate = param.split("-");    
+  let day = arrayDate[2].split(" ")[0];
+  let time = arrayDate[2].split(" ")[1];
   let month = arrayDate[1];
   let year = arrayDate[0];
 
