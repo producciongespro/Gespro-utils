@@ -31,12 +31,12 @@ export async function sendData(url, data, method) {
 /**
  * ***send FormData:*** Envia datos de tipo formdata al servidor. Permite envio de archivos.
  * @param {string} url
- * @param {FormData} items
+ * @param {FormData} formData
  * @param {string} method
  * @returns {JSON} Respuesta del servidor
  */
-export async function sendFormData(url, items, method) {
-  const res = await akiri.sendFormData(url, items, method);
+export async function sendFormData(url, formData, method) {
+  const res = await akiri.sendFormData(url, formData, method);
   return res;
 }
 

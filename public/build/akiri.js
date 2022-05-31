@@ -57,23 +57,18 @@ export async function sendData (url, data, method) {
   return res;
 };
 
-export async function sendFormData (url, items, method) {
-  const formData = new FormData();
+export async function sendFormData (url, formData, method) {
+  
+  const options = {
+    method: `${method ? method : "POST"}`,
+    body: formData	
+    }
 
   if (!method) {
     method="POST"
   }
-
-  for (let index = 0; index < items.length; index++) {
-    formData.append(items[index].name, items[index].val);
-    //console.log("items[index].name", items[index].name);
-    //console.log("items[index].val", items[index].val);
-  }
-
-  const resp = await fetch(url, {
-    method: method,
-    body: formData,
-  });
+  
+  const resp = await fetch(url, options );
   let json = await resp.json();
   return json;
 };
