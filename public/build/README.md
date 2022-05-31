@@ -50,9 +50,9 @@ o
 
 
 #### sendData 🔥
-``sendData (data, url, method) ``
+``sendData (url, data, method) ``
 
->Envia un formdata a una API mediante el método *POST* de *fetch* 
+>Envia un objeto json a una API mediante el método *POST* de *fetch* 
 
 + Parámetros: 🖐
 1. **data**: dato en formato *JSON*
